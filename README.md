@@ -7,7 +7,12 @@ Please install requirements after cloning the repo:
 pip3 install -e .
 ```
 
-We include some simple examples in `examples`, feel free to run and modify.
+We include some simple games in `examples` (e.g., Rock-Paper-Scissor, Matching-Pennies, Presidential-Election-Game).
+For example, if you want to try Rock-Paper-Scissor example, please run
+```bash
+python3 main.py --example rock_paper_scissor
+```
+You are welcome to contribute more fun games via [pull-requests](https://github.com/shuoyang2000/nash_equilibrium_solver/pulls)!
 
 ## How to solve
 The Nash equilibrium problem for two-player zero-sum games (2p0s) can be expressed as a linear program (LP), which means that equilibria can be computed in polynomial time.
