@@ -43,14 +43,19 @@ if __name__ == '__main__':
     parser.add_argument('--example', type=str, required=True, help="Which example you want to try? (e.g., rock_paper_scissor)")
     args = parser.parse_args()
 
+    # extract game rules from .yaml file
     example_name = args.example
     example_dir = os.path.join('examples', example_name)
-    with open(example_dir+'.yaml', 'r') as stream:
-        example_setup = yaml.safe_load(stream)
+    try:
+        with open(example_dir+'.yaml', 'r') as stream:
+            example_setup = yaml.safe_load(stream)
+    except:
+        raise ValueError(f"The example {example_name} is not included yet, please check out the example folder to see all current examples.")
 
     payoff_matrix = np.array(example_setup['payoff_matrix'])
     game_step = example_setup['game_step']
     p1_actions = example_setup['p1_actions']
     p2_actions = example_setup['p2_actions']
 
+    # solve the game
     solve(p1_action_choice=p1_actions, p2_action_choice=p2_actions, payoff_matrix=payoff_matrix, game_step=game_step, verbose=args.verbose)

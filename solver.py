@@ -45,9 +45,10 @@ class nash_equlibrium_solver:
         for player2_action_index in range(self.action_total_num_player2):
             lhs = 0
             for player1_action_index in range(self.action_total_num_player1):
-                # if the payoff matrix is huge (e.g., in extensive game), we can store it with bool utilities to save space
+                # if the payoff matrix is huge (e.g., converted from extensive game), we can store it with bool utilities to save space
                 if type(self.payoff_matrix[player1_action_index, player2_action_index]) is np.bool_:
                     p1_utility = 1 if self.payoff_matrix[player1_action_index, player2_action_index] else -1
+                # for simple normal form game, just store all payoff values
                 else:
                     p1_utility = self.payoff_matrix[player1_action_index, player2_action_index]
                 lhs += p1_utility * player1_actions[player1_action_index]
@@ -98,9 +99,10 @@ class nash_equlibrium_solver:
         for player1_action_index in range(self.action_total_num_player1):
             lhs = 0
             for player2_action_index in range(self.action_total_num_player2):
-                # if the payoff matrix is huge (e.g., in extensive game), we can store it with bool utilities to save space
+                # if the payoff matrix is huge (e.g., converted from extensive game), we can store it with bool utilities to save space
                 if type(self.payoff_matrix[player1_action_index, player2_action_index]) is np.bool_:
                     p1_utility = 1 if self.payoff_matrix[player1_action_index, player2_action_index] else 1
+                # for simple normal form game, just store all payoff values
                 else:
                     p1_utility = self.payoff_matrix[player1_action_index, player2_action_index]
                 lhs += p1_utility * player2_actions[player2_action_index]
