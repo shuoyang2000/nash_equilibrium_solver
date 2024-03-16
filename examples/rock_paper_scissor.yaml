@@ -1,0 +1,16 @@
+
+# Payoff matrix of Rock-Paper-Scissor game
+
+#     p1 / p2  |   Rock       Paper       Scissor
+#     --------------------------------------------
+#     Rock     |  (0, 0)    (-1, +1)     (+1, -1) 
+
+#     Paper    | (+1, -1)    (0, 0)      (-1, +1) 
+
+#     Scissor  | (-1, +1)   (+1, -1)      (0, 0)
+
+
+payoff_matrix: [[0, -1, +1], [+1, 0, -1], [-1, +1, 0]]
+game_step: 1
+p1_actions: {0: "Rock", 1: "Paper", 2: "Scissor"}
+p2_actions: {0: "Rock", 1: "Paper", 2: "Scissor"}

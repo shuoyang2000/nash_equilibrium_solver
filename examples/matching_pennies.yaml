@@ -1,0 +1,13 @@
+# Payoff matrix of matching pennies game
+
+#     p1\p2  |  Heads       Tails
+#     -----------------------------
+#     Heads  | (+1, -1)    (-1, +1)
+
+#     Tails  | (-1, +1)    (+1, -1)
+
+
+payoff_matrix: [[+1, -1], [-1, +1]]
+game_step: 1
+p1_actions: {0: "Head", 1: "Tail"}
+p2_actions: {0: "Head", 1: "Tail"}
