@@ -2,6 +2,11 @@
 A simple Nash Equilibrium solver for two-player zero-sum games implemented in python.
 
 ## Usage
+Please install requirements after cloning the repo:
+```bash
+pip3 install -e .
+```
+
 We include some simple examples in `examples`, feel free to run and modify.
 
 ## How to solve
