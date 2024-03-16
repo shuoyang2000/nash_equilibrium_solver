@@ -40,7 +40,8 @@ if __name__ == '__main__':
 
     parser = argparse.ArgumentParser(description='game_example')
     parser.add_argument('--verbose', action=argparse.BooleanOptionalAction, help='Verbose output')
-    parser.add_argument('--example', type=str, required=True, help="Which example you want to try? (e.g., rock_paper_scissor)")
+    parser.add_argument('--example', type=str, required=True, 
+                        help="Which example you want to try? (e.g., rock_paper_scissor, presidential_election, matching_pennies)")
     args = parser.parse_args()
 
     # extract game rules from .yaml file
