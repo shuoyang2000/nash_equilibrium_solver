@@ -1,0 +1,15 @@
+# from Prof. Aaron Roth's slides https://www.cis.upenn.edu/~aaroth/courses/slides/agt24/lect07.pdf
+
+# Payoff matrix of matching pennies game
+
+#     p1\p2    |  Morality     Tax-Cuts
+#     ----------------------------------
+#     Economy  |  (+3, -3)     (-1, +1)
+
+#     Society  |  (-2, +2)     (+1, -1)
+
+
+payoff_matrix: [[+3, -1], [-2, +1]]
+game_step: 1
+p1_actions: {0: "Economy", 1: "Society"}
+p2_actions: {0: "Morality", 1: "Tax-Cuts"}
