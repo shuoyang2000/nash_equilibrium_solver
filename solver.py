@@ -2,7 +2,7 @@ from gurobipy import *
 import numpy as np
 import time
 
-class nash_equlibrium_solver:
+class NashEqulibriumSolver:
 
     def __init__(self, game_step:int, p1_action_num:int, p2_action_num:int, payoff_matrix:np.array):
         
@@ -24,6 +24,15 @@ class nash_equlibrium_solver:
         assert self.payoff_matrix.shape[1] == self.action_total_num_player2, "Payoff matrix column number does not match Player 2 pure strategy number"
     
     def solve_linear_program_player1(self, verbose: bool=False):
+
+        """
+        Solve the NE profile strategy for player 1
+
+        verbose: output result details or not
+
+        Return (filtered_player1_NE, NE_utility), where filtered_player1_NE is player 1's strategy, 
+                                                        and NE_utility is its NE profile utility
+        """
 
         start_time = time.time()
 
@@ -78,6 +87,15 @@ class nash_equlibrium_solver:
             return None
     
     def solve_linear_program_player2(self, verbose: bool=False):
+
+        """
+        Solve the NE profile strategy for player 2
+
+        verbose: output result details or not
+
+        Return (filtered_player2_NE, NE_utility), where filtered_player2_NE is player 2's strategy, 
+                                                        and NE_utility is its NE profile utility
+        """
 
         start_time = time.time()
 

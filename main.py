@@ -1,5 +1,5 @@
 import numpy as np
-from solver import nash_equlibrium_solver
+from solver import NashEqulibriumSolver
 import os
 import argparse
 import yaml
@@ -12,7 +12,7 @@ def solve(game_step: int, p1_action_choice: dict, p2_action_choice: dict, payoff
     p2_action_num = len(p2_action_choice)
 
     # solving
-    solver = nash_equlibrium_solver(game_step, p1_action_num=p1_action_num, 
+    solver = NashEqulibriumSolver(game_step, p1_action_num=p1_action_num, 
                                     p2_action_num=p2_action_num, payoff_matrix=payoff_matrix)
     player1_sol = solver.solve_linear_program_player1(verbose=verbose)
     player2_sol = solver.solve_linear_program_player2(verbose=verbose)
