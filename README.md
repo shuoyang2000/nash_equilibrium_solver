@@ -28,5 +28,9 @@ Why does the above formulation can give us a NE? The main reason is the well-kno
 
 John von Neumann tells us that for any finite 2p0s, any NE profile gives player a payoff which equals to both his minmax value and his maxmin value :)
 
+## TODO
+The current version use [Gurobi](https://www.gurobi.com/) as the LP solver, which requires license though. 
+We plan to implement a cvxpy version as solver as well.
+
 ## References
 Shoham, Yoav, and Kevin Leyton-Brown. [Multiagent systems: Algorithmic, game-theoretic, and logical foundations](https://eecs.harvard.edu/cs286r/courses/fall08/files/SLB.pdf). Cambridge University Press, 2008.
